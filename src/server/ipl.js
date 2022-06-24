@@ -27,7 +27,7 @@ function matchPerYear() {
     }
 
     let yearData = JSON.stringify(year);
-    fs.writeFile('/home/silvr/Anchal_IPL_Project/output/matchPerYear.json', yearData, (err) => {
+    fs.writeFile('/home/silvr/Anchal_IPL_Project/src/public/output/matchPerYear.json', yearData, (err) => {
         if (err) {
             console.log(err);
         }
@@ -77,7 +77,7 @@ function extraRuns() {
 
     let extData = JSON.stringify(team);
 
-    fs.writeFile('/home/silvr/Anchal_IPL_Project/output/extraRuns.json', extData, (err) => {
+    fs.writeFile('/home/silvr/Anchal_IPL_Project/src/public/output/extraRuns.json', extData, (err) => {
         if (err) {
             console.log(err)
         }
@@ -138,7 +138,7 @@ function ecoBowl() {
 
     let topTen = JSON.stringify(topTenBowler);
 
-    fs.writeFile('/home/silvr/Anchal_IPL_Project/output/economicBowler.json', topTen, (err) => {
+    fs.writeFile('/home/silvr/Anchal_IPL_Project/src/public/output/economicBowler.json', topTen, (err) => {
         if (err) {
             console.log(err)
         }
@@ -174,7 +174,7 @@ function matchWins() {
 
     let winners = JSON.stringify(wins);
 
-    fs.writeFile('/home/silvr/Anchal_IPL_Project/output/matchesWonPerYear.json', winners, (err) => {
+    fs.writeFile('/home/silvr/Anchal_IPL_Project/src/public/output/matchesWonPerYear.json', winners, (err) => {
         if (err) {
             console.log(err)
         }
