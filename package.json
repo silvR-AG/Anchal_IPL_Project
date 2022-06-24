@@ -1,0 +1,19 @@
+{
+  "name": "anchal_ipl_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silvR-AG/Anchal_IPL_Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/silvR-AG/Anchal_IPL_Project/issues"
+  },
+  "homepage": "https://github.com/silvR-AG/Anchal_IPL_Project#readme"
+}
