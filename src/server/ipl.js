@@ -3,6 +3,7 @@ matchPath = "/home/silvr/Anchal_IPL_Project/src/data/matches.csv"
 matchData = dataReader.fieldDelimiter(",").getJsonFromCsv(matchPath)
 delivPath = "/home/silvr/Anchal_IPL_Project/src/data/deliveries.csv"
 delivData = dataReader.fieldDelimiter(",").getJsonFromCsv(delivPath)
+var fs = require('fs')
 
 
 // Function for total number of matches played per year//
@@ -21,9 +22,15 @@ function matchPerYear() {
         };
     }
 
-    console.log(year);
+    let yearData = JSON.stringify(year);
+    fs.writeFile('/home/silvr/Anchal_IPL_Project/output/matchPerYear.json', yearData,(err)=>{
+        if(err){
+            console.log(err)
+        }
+    })
+
 }
-// matchPerYear();
+matchPerYear();
 
 
 //Function for extra runs conceded by team in 2016//
@@ -63,9 +70,16 @@ function extraRuns(){
             }
         }
     }
-    console.log(team);  
+
+    let extData = JSON.stringify(team);
+
+    fs.writeFile('/home/silvr/Anchal_IPL_Project/output/extraRuns.json', extData,(err)=>{
+        if(err){
+            console.log(err)
+        }
+    })
 }
-// extraRuns()
+extraRuns()
 
 // Function for economical bowler of 2015//
 function ecoBowl(){
@@ -104,12 +118,25 @@ function ecoBowl(){
                 econBowler[bowlerName] = bowler[bowlerName][2]
             }
 
-        }
- 
-    }
-    console.log(econBowler)
+        }}
+    bowlerEcon = Object.entries(econBowler);
+    
+    bowlerEcon.sort(function(a, b) {
+    return a[1] - b[1];
+    })
 
-}
+     let topTenBowler = bowlerEcon.slice(0,10);
+
+    
+    let topTen = JSON.stringify(topTenBowler);
+
+    fs.writeFile('/home/silvr/Anchal_IPL_Project/output/economicBowler.json', topTen,(err)=>{
+        if(err){
+            console.log(err)
+        }
+    })
+    
+} 
 
 ecoBowl()
 
